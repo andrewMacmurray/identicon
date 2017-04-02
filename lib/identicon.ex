@@ -5,7 +5,7 @@ defmodule Identicon do
     {opts, _, _} = OptionParser.parse(args, switches: [name: :string])
     case process(opts[:name]) do
       :ok -> IO.puts "image created for #{opts[:name]}"
-      :error -> IO.puts "could not create image"
+      _ -> IO.puts "could not create image"
     end
   end
 
