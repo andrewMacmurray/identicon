@@ -68,9 +68,8 @@ defmodule Identicon do
     %Img{image | grid: grid}
   end
 
-  defp mirror_row(row) do
-    [a, b | _] = row
-    row ++ [b, a]
+  defp mirror_row([a, b, c]) do
+    [a, b, c, b, a]
   end
 
   def pick_color(%Img{hex: [r, g, b | _tail]} = image) do
