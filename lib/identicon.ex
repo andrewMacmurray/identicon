@@ -1,7 +1,15 @@
 defmodule Identicon do
   alias Identicon.Image, as: Img
 
-  def main(input) do
+  def main(args \\ []) do
+    {opts, _, _} = OptionParser.parse(args, switches: [name: :string])
+    case process(opts[:name]) do
+      :ok -> IO.puts "image created for #{opts[:name]}"
+      :error -> IO.puts "could not create image"
+    end
+  end
+
+  def process(input) do
     input
     |> hash_input
     |> pick_color

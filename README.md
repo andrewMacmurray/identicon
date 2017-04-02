@@ -5,19 +5,19 @@ An Identicon generator built in [`Elixir`](http://elixir-lang.org/) that takes y
 to get started:
 
 + make sure you have [`Elixir` installed](http://elixir-lang.org/install.html)
-+ clone the repo and run
++ clone the repo
++ then compile the source with
 
-```
-> iex -S mix
+```sh
+> mix escript.build
 ```
 
 + to make your own image run:
 
-```elixir
-# put your name as a string where your_name is
-iex> Identicon.main(your_name)
+```sh
+> ./identicon name=your-name
 ```
-+ this will make a new identicon for you
++ this will make a new identicon for you in the current directory as "your-name.png"
 
 here's the beautiful one it make for "smellyandrew"
 
